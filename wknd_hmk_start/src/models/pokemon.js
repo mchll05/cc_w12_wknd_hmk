@@ -14,7 +14,6 @@ Pokemon.prototype.getData = function (number) {
   const url = `https://pokeapi.co/api/v2/pokemon/${ number }`;
   request = new Request(url);
     request.get((data) => {
-      console.log("This runs!");
     PubSub.publish('PokemonDetail:data-ready', data);
   });
 };
